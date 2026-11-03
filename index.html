@@ -1,0 +1,1478 @@
+<html>
+<head>
+<title>C Language Tutorial</title>
+</head>
+
+<body style="background-color:white; 
+font-family:Arial; margin:20px;">
+<h1 style="background-color:navy;  
+color:white; text-align:centre; 
+padding:25px;">
+C LANGUAGE TUTORIAL 
+
+</h1>
+<h1style="color:blue;">Introduction to C Language</h1>
+<p>
+C is a general-purpose programming language.
+It was developed by Dennis Ritchie in 1972
+C language is used to develop software, operating systems, games and applications. 
+</p><b>
+<h2 style="color:blue;">Topics of C Language (4115)</h2>
+<p>Click on any topic to see its programmes and questions.</p>
+<details style="background:white;
+padding:15px;
+margin:10px;">
+
+<summary>1. Basic Input and Output</summary>
+<h3>Write a program to print the message
+Today I made my first C Program.</h3>
+<pre>
+#include <stdio.h>
+int main() {
+    printf("Today I made my first C Program");
+    return 0;
+}</pre>
+
+<h3> Add Two Numbers</h3>
+<pre>
+#include<stdio.h>
+int main()
+{
+int a,b;
+printf("Enter two numbers");
+scanf("%d%d",&amp;b);
+printf("Sum = %d",a+b);
+return 0;
+}
+</pre>
+
+<h3>Write a program to read a character from the keyboard and display it on the screen</h3>
+<pre>
+#include <stdio.h>
+int main() {
+char ch;
+printf("Enter a character: ");
+scanf("%c", &ch);    
+printf("You entered: %c", ch);
+return 0;
+}
+</pre>
+
+<h3>Write a program to read a character from the keyboard and display it on the screen.</h3>
+<pre>
+#include <stdio.h>
+int main() {
+char ch;    
+printf("Enter a character: ");
+scanf("%c", &ch);    
+printf("You entered: %c", ch); 
+ return 0;
+}
+</pre>
+
+<h3>Write a program to read only 4 characters from the keyboard and display it on the screen in a separate line.</h3>
+<pre>
+#include <stdio.h>
+int main() {
+char ch[4];
+ int i;
+printf("Enter 4 characters: ");
+for(i = 0; i < 4; i++) {
+scanf(" %c", &ch[i]);  // space lagana zaroori hai
+}
+printf("You entered in separate lines:\n");
+for(i = 0; i < 4; i++) {
+printf("%c\n", ch[i]);
+}
+return 0;
+}
+</pre>
+
+<h3>Write a program to print your name at center of the first line?</h3>
+<pre>
+#include <stdio.h>
+#include <string.h>
+int main() {
+char name[] = "Ashna";  // Yaha apna naam likhna
+int len = strlen(name);
+int width = 80;  // Normal screen 80 columns ka hota hai
+int spaces = (width - len) / 2;
+for(int i = 0; i < spaces; i++) {
+ printf(" ");
+ }
+printf("%s\n", name);
+ return 0;
+}
+</pre>
+
+<h3>Write a program to store single quote and print that variable to show single quote on output screen.</h3>
+<pre>
+#include <stdio.h>
+int main() {
+char ch = '\'';  // Single quote ko store karne ke liye \' use karte hain    
+printf("Stored character is: %c\n", ch);    
+return 0;
+}
+</pre>
+
+<h3>Write a program for printing your name on output screen but your name should blink 5 times</h3>
+<pre>
+#include <stdio.h>
+int main() {
+ char name[] = "Ashna"; 
+int i;
+for(i = 0; i < 5; i++) {
+ printf("\033[5m%s\033[0m\n", name);  
+sleep(1);
+printf("\033[2J\033[H"); 
+    }
+printf("Final: %s\n", name);
+return 0;
+}
+</pre>
+
+<h3>Write a program to print your name at center of the first line ?</h3>
+<pre>
+#include <stdio.h>
+#include <string.h>
+int main()
+ {char name[] = "Ashna";  // Yaha apna naam likh do
+ int len = strlen(name);    
+printf("%*s\n", (80 + len)/2, name);  
+return 0;
+}
+</pre>
+
+<h3>Write the program to display this output ?
+#include
+#include
+#include
+void main ()
+{
+clrscr();
+printf(“hello,welcome to c”);
+delay(5000);
+}</h3>
+<pre>
+#include <stdio.h>
+#include <conio.h>
+#include <dos.h>
+
+void main() {
+    clrscr();
+    printf("hello,welcome to c");
+    delay(5000);
+    getch();
+}
+</pre>
+</details>
+<details style="background:white;padding:15px; margin:10px;">
+<summary>2. Variables and Data Types</summary>
+<h3>Question 1: Display Different Data Types</h3>
+<pre>
+#include<stdio.h>
+int main()
+{
+int age=20;
+float marks=85.5;
+char grad ='A';
+printf("%d\n" ,age);
+printf("%f\n" ,marks);
+printf("%c" ,grade);
+return0;
+}
+</pre>
+</details>
+<details style="background:white; padding:15px; margin:10px;">
+<summary>3. Operators</summary>
+<h3>Questions 1: Perform Arithmetic Operations</h3>
+<pre>
+#include<stdio.h>;
+int main()
+{
+int a=10,b=5;
+printf("Addition=%d\n" ,a+b);
+printf("Subtraction=%d\n" ,a+b);
+printf("Multiplication=%d\n" ,a+b);
+printf("Division=%d\n" ,a+b);
+return 0;
+}
+</pre>
+
+<h3>Write a program to show that example of pre-increment ?</h3>
+<pre>
+#include <stdio.h>
+#include <conio.h>
+void main() {
+int a = 10, b; 
+clrscr();
+printf("Value of a = %d\n", a);
+ printf("Value of b = %d\n", b);
+ printf("\nIn Pre-Increment, first increment then assign");   
+  getch();
+}
+</pre>
+
+<h3>Write a program to show that example of post-increment ?</h3>
+<pre>
+
+#include <stdio.h>
+#include <conio.h>
+void main() {
+    int a = 10, b;  
+   clrscr();
+ b = a++;  // Pehle b me 10 jayega, fir a=11 hoga  
+   printf("Value of a = %d\n", a);
+    printf("Value of b = %d\n", b);
+    printf("\nIn Post-Increment, first assign then increment");
+    
+    getch();
+}
+</pre>
+
+<h3>Write a program to enter 2 numbers from user add the number and show the answer , again take 2 number from user subtract the number display the answer ,again take 2 number from user multiply the number display the answer and ,again take 2 number from the user divide the number display the answer ,again take 2 number find the remainder and display the answer ?</h3>
+<pre>
+#include <stdio.h>
+#include <conio.h>
+void main() {
+    int a, b;
+    int sum, sub, mul, div, rem;
+    
+clrscr();
+    
+1. ADDITION
+printf("Enter 2 numbers for Addition: ");
+scanf("%d %d", &a, &b);
+sum = a + b;
+printf("Answer (Addition) = %d + %d = %d\n\n", a, b, sum);
+    
+// 2. SUBTRACTION
+    printf("Enter 2 numbers for Subtraction: ");
+    scanf("%d %d", &a, &b);
+    sub = a - b;
+    printf("Answer (Subtraction) = %d - %d = %d\n\n", a, b, sub);
+    
+    // 3. MULTIPLICATION
+    printf("Enter 2 numbers for Multiplication: ");
+    scanf("%d %d", &a, &b);
+    mul = a * b;
+    printf("Answer (Multiplication) = %d * %d = %d\n\n", a, b, mul);
+    
+    // 4. DIVISION
+    printf("Enter 2 numbers for Division: ");
+    scanf("%d %d", &a, &b);
+    if(b != 0) {
+        div = a / b;
+        printf("Answer (Division) = %d / %d = %d\n\n", a, b, div);
+    } else {
+        printf("Cannot divide by zero!\n\n");
+    }
+    
+    // 5. REMAINDER (Modulus)
+    printf("Enter 2 numbers for Remainder: ");
+    scanf("%d %d", &a, &b);
+    if(b != 0) {
+        rem = a % b;
+        printf("Answer (Remainder) = %d %% %d = %d\n\n", a, b, rem);
+    } else {
+        printf("Cannot find remainder with zero!\n\n");
+    }
+    
+    getch();
+}
+</pre>
+
+<h3>Write a program to enter a number from the user ,the length of the number is depend on the user ,programmer should print the last digit of number ?</h3>
+<pre>
+#include <stdio.h>
+#include <conio.h>
+void main() {
+long int num;
+int last_digit;
+clrscr();    
+printf("Enter any number (any length): ");
+ scanf("%ld", &num);    
+last_digit = num % 10;  // Last digit ka formula    
+  if(last_digit < 0) {
+ last_digit = -last_digit;
+ } 
+ printf("Last digit of %ld is %d", num, last_digit);   
+    getch();
+}
+</pre>
+
+<h3>Enter a decimal number from the user (float) and print the right hand side of the decimal point ?</h3>
+<pre>
+#include <stdio.h>
+#include <conio.h>
+#include <string.h>
+
+void main() {
+    char num[50];
+    int i, found = 0;
+    
+    clrscr();
+    printf("Enter a decimal number: ");
+    scanf("%s", num);
+    
+    printf("Right side of decimal point is: ");
+    
+    for(i = 0; i < strlen(num); i++) {
+        if(num[i] == '.') {
+            found = 1;
+            continue;
+        }
+        if(found == 1) {
+            printf("%c", num[i]);
+        }
+    }
+    
+    if(found == 0) {
+        printf("No decimal point found!");
+    }
+    
+    getch();
+}</pre>
+<h3>Enter a number from user and find out cube of numbers ?</h3>
+<pre>
+#include <stdio.h>
+#include <conio.h>
+
+void main() {
+    int num, cube;
+    
+    clrscr();
+    
+    printf("Enter a number: ");
+    scanf("%d", &num);
+    
+    cube = num * num * num;
+    
+    printf("Cube of %d = %d", num, cube);
+    
+    getch();
+}
+</pre>
+<h3>Enter float number from user and round of the number ?</h3>
+<pre>
+#include <stdio.h>
+#include <conio.h>
+void main() {
+float num;
+int r;
+    
+    clrscr();
+printf("Enter a float number: ");
+scanf("%f", &num);   
+printf("Original number = %f\n", num);
+printf("Rounded number = %d\n", rounded);
+ getch();
+}
+</pre>
+<h3>Enter a lower case character from user and print it into upper case ?</h3>
+<pre>
+#include <stdio.h>
+#include <conio.h>
+
+void main() {
+    char ch;
+    
+    clrscr();
+    
+    printf("Enter a lowercase character: ");
+    scanf("%c", &ch);
+    
+    ch = ch - 32;  // lowercase to uppercase formula
+    
+    printf("Uppercase = %c", ch);
+    
+    getch();
+}
+</pre>
+<h3>Enter marks of students and calculate average of student’s marks ?</h3>
+<pre>
+#include <stdio.h>
+#include <conio.h>
+
+void main() {
+    int marks1, marks2, marks3, marks4, marks5;
+    float total, average;
+    
+    clrscr();
+    
+    printf("Enter marks of 5 subjects:\n");
+    printf("Subject 1: ");
+    scanf("%d", &marks1);
+    printf("Subject 2: ");
+    scanf("%d", &marks2);
+    printf("Subject 3: ");
+    scanf("%d", &marks3);
+    printf("Subject 4: ");
+    scanf("%d", &marks4);
+    printf("Subject 5: ");
+    scanf("%d", &marks5);
+    
+    total = marks1 + marks2 + marks3 + marks4 + marks5;
+    average = total / 5;
+    
+    printf("\nTotal Marks = %.0f\n", total);
+    printf("Average Marks = %.2f\n", average);
+    
+    getch();
+}
+</pre>
+
+</details>
+<details style="background:white;padding:15px;margin:10px;">
+<summary>4. Decision Control Structure</summary>
+<h3>
+Check Even or Odd</h3>
+<pre>
+#include
+int main()
+{
+int n;
+printf("Enter a number");
+scanf("%d" ,&n);
+if(n%2==0)
+printf("Even Number");
+else
+printf("Odd Number");
+return 0;
+}
+</pre>
+<h3> Check Positive or Negative</h3>
+<pre>
+#include<stdio.h>;
+int main()
+{
+int n;
+scanf("%d" ,n);
+if(n>0)
+printf("Positive");
+else if(n<0)
+printf("Negative");
+else
+printf("Zero");
+return 0;
+}
+</pre>
+<h3>Create structure of employee which there is emp.ID, name, designation of 50 employees from user, print details in tabular form ?</h3>
+<pre>
+#include <stdio.h>
+#include <conio.h>
+
+struct Employee {
+    int id;
+    char name[50];
+    char designation[50];
+};
+
+void main() {
+    struct Employee emp[50];
+    int i;
+    
+    clrscr();
+    
+    printf("Enter details of 50 Employees:\n");
+    printf("------------------------------\n");
+    
+    for(i = 0; i < 50; i++) {
+        printf("\nEmployee %d:\n", i+1);
+        
+        printf("Enter ID: ");
+        scanf("%d", &emp[i].id);
+        
+        printf("Enter Name: ");
+        scanf("%s", emp[i].name); // space wala naam ke liye gets() use karna
+        
+        printf("Enter Designation: ");
+        scanf("%s", emp[i].designation);
+    }
+    clrscr();
+    printf("\n\n%-10s %-20s %-20s\n", "Emp.ID", "Name", "Designation");
+    printf("--------------------------------------------------\n");
+    
+    for(i = 0; i < 50; i++) {
+        printf("%-10d %-20s %-20s\n", emp[i].id, emp[i].name, emp[i].designation);
+    }
+    
+    getch();
+}
+</pre>
+<h3>Enter student details like roll name, fee, DOB and print all the detail by ascending order of roll number ?</h3>
+<pre>
+#include <stdio.h>
+#include <conio.h>
+
+struct Student {
+    int roll;
+    char name[50];
+    float fee;
+    char dob[20]; // DD/MM/YYYY
+};
+
+void main() {
+    struct Student s[50], temp;
+    int i, j, n;
+    
+    clrscr();
+    
+    printf("How many students? ");
+    scanf("%d", &n);
+    
+    // Input
+    for(i = 0; i < n; i++) {
+        printf("\nStudent %d:\n", i+1);
+        printf("Enter Roll No: ");
+        scanf("%d", &s[i].roll);
+        
+        printf("Enter Name: ");
+        scanf("%s", s[i].name);
+        
+        printf("Enter Fee: ");
+        scanf("%f", &s[i].fee);
+        
+        printf("Enter DOB (DD/MM/YYYY): ");
+        scanf("%s", s[i].dob);
+    }
+    
+    // Ascending Order Sort by Roll No - Bubble Sort
+    for(i = 0; i < n-1; i++) {
+        for(j = 0; j < n-i-1; j++) {
+            if(s[j].roll > s[j+1].roll) {
+                temp = s[j];
+                s[j] = s[j+1];
+                s[j+1] = temp;
+            }
+        }
+    }
+    
+    // Print in Tabular Form
+    printf("\n\n--- STUDENT DETAILS (Sorted by Roll No) ---\n");
+    printf("%-10s %-20s %-15s %-15s\n", "Roll No", "Name", "Fee", "DOB");
+    printf("----------------------------------------------------------------\n");
+    
+    for(i = 0; i < n; i++) {
+        printf("%-10d %-20s %-15.2f %-15s\n", s[i].roll, s[i].name, s[i].fee, s[i].dob);
+    }
+    
+    getch();
+}
+</pre>
+</details>
+<details style="background:white; padding:15px; margin:10px:">
+<summary>5. Iterative Control Structure (Loops)</summary>
+<h3>Print 1 to 10</h3>
+<pre>
+#include<stdio.h>;
+int main()
+{
+int i;
+for(i=1;i<=10;i++)
+{
+printf("%d\n" ,i);
+}
+return 0;
+}
+</pre>
+<h3>Multiplication Table</h3>
+<pre>
+#include<stdio.h>;
+int main()
+{
+int n,i;
+printf("Enter number");
+scanf("%d" ,&amp;n);
+for(i=1;i<=10;++)
+{
+printf("%dx%d = %d\n",n,i,n*i);
+}
+return 0;
+{
+</pre>
+<h3>Write a program print the pattern on the screen i.e. ?
+11111
+11111
+11111</h3>
+<pre>
+#include <stdio.h>
+#include <conio.h>
+
+void main() {
+    int i, j;
+    
+    clrscr();
+    
+    for(i = 1; i <= 3; i++) {        // 3 Rows
+        for(j = 1; j <= 5; j++) {    // 5 Columns
+            printf("1");
+        }
+        printf("\n"); // Next line
+    }
+    
+    getch();
+}
+</pre>
+</details>
+
+<details style = "background:white;padding:15px;
+margin:10px;">
+<summary>6. Single Dimensional Arrays</summary>
+<h3>  Display Array Elements</h3>
+<pre>
+#include<stdio.h>;
+int main()
+}
+int a [5]= [10,20,30,40,50];
+int i;
+for(i=0;i<5;i++)
+{
+printf("%d\n",a[i]);
+}
+return 0;
+{
+</pre>
+<h3> Find Sum of Array</h3>
+<pre>
+#include<stdio.h>;
+int main()
+}
+int a[5]= [1,2,3,4,5];
+int i,sum=0;
+for(i=0;i<5;i++)
+sum=sum+a[i];
+
+printf(Sum=%d",sum);
+return0;
+}
+</pre>
+<h3>1. Enter array and display all valuec</h3>
+<pre>#include <stdio.h>
+int main() {
+    int arr[100], n, i;
+    printf("Enter size: ");
+    scanf("%d", &n);
+    printf("Enter %d values:\n", n);
+    for(i=0; i<n; i++) scanf("%d", &arr[i]);
+    
+    printf("Array values are:\n");
+    for(i=0; i<n; i++) printf("%d ", arr[i]);
+    return 0;</pre>
+<h3> Print array in reverse order</h3>
+<pre>#include <stdio.h>
+int main() {
+    int arr[100], n, i;
+    printf("Enter size: ");
+    scanf("%d", &n);
+    for(i=0; i<n; i++) scanf("%d", &arr[i]);
+    
+    printf("Reverse order:\n");
+    for(i=n-1; i>=0; i--) printf("%d ", arr[i]);
+    return 0;
+}
+</pre>
+<h3> Copy array into second array</h3>
+<pre>
+#include <stdio.h>
+int main() {
+    int a[100], b[100], n, i;
+    printf("Enter size: ");
+    scanf("%d", &n);
+    for(i=0; i<n; i++) scanf("%d", &a[i]);
+    
+    for(i=0; i<n; i++) b[i] = a[i];
+    
+    printf("Second array:\n");
+    for(i=0; i<n; i++) printf("%d ", b[i]);
+    return 0;
+}</pre>
+<h3>Copy into another array in reverse order</h3>
+<pre>#include <stdio.h>
+int main() {
+    int a[100], b[100], n, i, j=0;
+    printf("Enter size: ");
+    scanf("%d", &n);
+    for(i=0; i<n; i++) scanf("%d", &a[i]);
+    
+    for(i=n-1; i>=0; i--) {
+        b[j] = a[i];
+        j++;
+    }
+    for(i=0; i<n; i++) printf("%d ", b[i]);
+    return 0;
+}
+</pre>
+<h3> Print even numbers from array</h3>
+<pre>#include <stdio.h>
+int main() {
+    int arr[100], n, i;
+    printf("Enter size: ");
+    scanf("%d", &n);
+    for(i=0; i<n; i++) scanf("%d", &arr[i]);
+    
+    printf("Even numbers: ");
+    for(i=0; i<n; i++) {
+        if(arr[i] % 2 == 0) printf("%d ", arr[i]);
+    }
+    return 0;
+}
+</pre>
+<h3> Print positive numbers</h3>
+<pre>#include <stdio.h>
+int main() {
+    int arr[100], n, i;
+    printf("Enter size: ");
+    scanf("%d", &n);
+    for(i=0; i<n; i++) scanf("%d", &arr[i]);
+    
+    printf("Positive numbers: ");
+    for(i=0; i<n; i++) {
+        if(arr[i] > 0) printf("%d ", arr[i]);
+    }
+    return 0;
+}</pre>
+<h3> Square all values of array</h3>
+<pre>#include <stdio.h>
+int main() {
+    int arr[100], n, i;
+    printf("Enter size: ");
+    scanf("%d", &n);
+    for(i=0; i<n; i++) scanf("%d", &arr[i]);
+    
+    printf("Square: ");
+    for(i=0; i<n; i++) {
+        printf("%d ", arr[i]*arr[i]);
+    }
+    return 0;
+}</pre>
+<h3> Enter 5 values and print odd numbers</h3>
+<pre>#include <stdio.h>
+int main() {
+    int arr[5], i;
+    printf("Enter 5 values: ");
+    for(i=0; i<5; i++) scanf("%d", &arr[i]);
+    
+    printf("Odd numbers: ");
+    for(i=0; i<5; i++) {
+        if(arr[i] % 2 != 0) printf("%d ", arr[i]);
+    }
+    return 0;
+}</pre>
+<h3>Add all values (Sum)</h3>
+<pre>
+
+<#include <stdio.h>
+int main() {
+    int arr[5], i, sum=0;
+    printf("Enter 5 values: ");
+    for(i=0; i<5; i++) scanf("%d", &arr[i]);
+    
+    for(i=0; i<5; i++) sum = sum + arr[i];
+    
+    printf("Sum = %d", sum);
+    return 0;
+}</pre>
+<h3> Search value - found / not found</h3>
+<pre>#include <stdio.h>
+int main() {
+    int arr[5], i, search, found=0;
+    printf("Enter 5 values: ");
+    for(i=0; i<5; i++) scanf("%d", &arr[i]);
+    
+    printf("Enter value to search: ");
+    scanf("%d", &search);
+    
+    for(i=0; i<5; i++) {
+        if(arr[i] == search) {
+            found = 1;
+            break;
+        }
+    }
+    if(found) printf("found");
+    else printf("not found");
+    return 0;
+}</pre>
+<h3> Sort in ascending order</h3>
+<pre>#include <stdio.h>
+int main() {
+    int arr[5], i, j, temp;
+    printf("Enter 5 values: ");
+    for(i=0; i<5; i++) scanf("%d", &arr[i]);
+    
+    for(i=0; i<5; i++) {
+        for(j=i+1; j<5; j++) {
+            if(arr[i] > arr[j]) {
+                temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+            }
+        }
+    }
+    printf("Sorted: ");
+    for(i=0; i<5; i++) printf("%d ", arr[i]);
+    return 0;
+}</pre> 
+<h3>Find maximum value</h3>
+<pre>#include <stdio.h>
+int main() {
+    int arr[100], n, i, max;
+    printf("Enter size: ");
+    scanf("%d", &n);
+    for(i=0; i<n; i++) scanf("%d", &arr[i]);
+    
+    max = arr[0];
+    for(i=1; i<n; i++) {
+        if(arr[i] > max) max = arr[i];
+    }
+    printf("Maximum = %d", max);
+    return 0;
+}
+</pre>
+<h3> Find minimum value</h3>
+<pre>#include <stdio.h>
+int main() {
+    int arr[100], n, i, min;
+    printf("Enter size: ");
+    scanf("%d", &n);
+    for(i=0; i<n; i++) scanf("%d", &arr[i]);
+    
+    min = arr[0];
+    for(i=1; i<n; i++) {
+        if(arr[i] < min) min = arr[i];
+    }
+    printf("Minimum = %d", min);
+    return 0;
+}
+</pre>
+</details>
+
+<details style="background:white;padding:15px;margin:10px;">
+<summary>7. Multidimensional Arrays</summary>
+
+<h3>Display a 2D Array </h3>
+<pre>
+#include<stdio.h>;
+int main()
+}
+int a [2][2]= {[1,2},{3,4]};
+int i;
+for(i=0;i<2;i++)
+{
+for(j=0;j<2;j++)
+}
+printif("%d" ,a[i][j]);
+{
+printif("\n");
+}
+return 0;
+{
+</pre>
+<h3>Enter four number and print into matrix (2x2)</h3>
+<pre>#include <stdio.h>
+int main() {
+    int a[2][2], i, j;
+    printf("Enter 4 numbers:\n");
+    for(i=0; i<2; i++) {
+        for(j=0; j<2; j++) {
+            scanf("%d", &a[i][j]);
+        }
+    }
+    printf("Matrix is:\n");
+    for(i=0; i<2; i++) {
+        for(j=0; j<2; j++) {
+            printf("%d ", a[i][j]);
+        }
+        printf("\n");
+    }
+    return 0;
+}</pre>
+<h3>Enter matrix and transpose them</h3>
+<pre>#include <stdio.h>
+int main() {
+    int a[10][10], trans[10][10], r, c, i, j;
+    printf("Enter rows and cols: ");
+    scanf("%d %d", &r, &c);
+    
+    printf("Enter matrix:\n");
+    for(i=0; i<r; i++)
+        for(j=0; j<c; j++)
+            scanf("%d", &a[i][j]);
+    
+    // Transpose
+    for(i=0; i<r; i++)
+        for(j=0; j<c; j++)
+            trans[j][i] = a[i][j];
+    
+    printf("Transpose Matrix:\n");
+    for(i=0; i<c; i++) {
+        for(j=0; j<r; j++) {
+            printf("%d ", trans[i][j]);
+        }
+        printf("\n");
+    }
+    return 0;
+}</pre>
+<h3>Enter 2 matrix and add them</h3>
+<pre>#include <stdio.h>
+int main() {
+    int a[10][10], b[10][10], sum[10][10], r, c, i, j;
+    printf("Enter rows and cols: ");
+    scanf("%d %d", &r, &c);
+    
+    printf("Enter first matrix:\n");
+    for(i=0; i<r; i++)
+        for(j=0; j<c; j++)
+            scanf("%d", &a[i][j]);
+    
+    printf("Enter second matrix:\n");
+    for(i=0; i<r; i++)
+        for(j=0; j<c; j++)
+            scanf("%d", &b[i][j]);
+    
+    // Add
+    for(i=0; i<r; i++)
+        for(j=0; j<c; j++)
+            sum[i][j] = a[i][j] + b[i][j];
+    
+    printf("Sum Matrix:\n");
+    for(i=0; i<r; i++) {
+        for(j=0; j<c; j++) {
+            printf("%d ", sum[i][j]);
+        }
+        printf("\n");
+    }
+    return 0;
+}</pre>
+<h3>Enter 2 matrix and subtract them</h3>
+<pre>#include <stdio.h>
+int main() {
+    int a[10][10], b[10][10], sub[10][10], r, c, i, j;
+    printf("Enter rows and cols: ");
+    scanf("%d %d", &r, &c);
+    
+    printf("Enter first matrix:\n");
+    for(i=0; i<r; i++)
+        for(j=0; j<c; j++)
+            scanf("%d", &a[i][j]);
+    
+    printf("Enter second matrix:\n");
+    for(i=0; i<r; i++)
+        for(j=0; j<c; j++)
+            scanf("%d", &b[i][j]);
+    
+    // Subtract
+    for(i=0; i<r; i++)
+        for(j=0; j<c; j++)
+            sub[i][j] = a[i][j] - b[i][j];
+    
+    printf("Subtraction Matrix:\n");
+    for(i=0; i<r; i++) {
+        for(j=0; j<c; j++) {
+            printf("%d ", sub[i][j]);
+        }
+        printf("\n");
+    }
+    return 0;
+}</pre>
+<h3> Enter 2 matrix and multiply them</h3>
+<pre>#include <stdio.h>
+int main() {
+    int a[10][10], b[10][10], mul[10][10], r1, c1, r2, c2, i, j, k;
+    printf("Enter rows and cols of first matrix: ");
+    scanf("%d %d", &r1, &c1);
+    printf("Enter rows and cols of second matrix: ");
+    scanf("%d %d", &r2, &c2);
+    
+    if(c1 != r2) {
+        printf("Multiplication not possible!");
+        return 0;
+    }
+    
+    printf("Enter first matrix:\n");
+    for(i=0; i<r1; i++)
+        for(j=0; j<c1; j++)
+            scanf("%d", &a[i][j]);
+    
+    printf("Enter second matrix:\n");
+    for(i=0; i<r2; i++)
+        for(j=0; j<c2; j++)
+            scanf("%d", &b[i][j]);
+    
+    // Initialize mul to 0
+    for(i=0; i<r1; i++)
+        for(j=0; j<c2; j++)
+            mul[i][j] = 0;
+    
+    // Multiply
+    for(i=0; i<r1; i++) {
+        for(j=0; j<c2; j++) {
+            for(k=0; k<c1; k++) {
+                mul[i][j] += a[i][k] * b[k][j];
+            }
+        }
+    }
+    
+    printf("Multiplication Matrix:\n");
+    for(i=0; i<r1; i++) {
+        for(j=0; j<c2; j++) {
+            printf("%d ", mul[i][j]);
+        }
+        printf("\n");
+    }
+    return 0;
+}</pre>
+</details>
+<details style="background:white;padding:15px;margin:10px;">
+<summary>8.Pointers</summary>
+<h3>Question 1 : Print Address and Value</h3>
+<pre>
+#include<stdio.h>;
+int main()
+}
+int a=10;
+int*p;
+{
+p=&amp;a;
+
+printf("Value=%d\n",*p);
+printf("Address=%p",(void*)p);
+return 0;
+{
+</pre>
+</details>
+<details style="background:white;padding:15px;margin:10px;">
+<summary>9.Functions</summary>
+<h3>Addition Using Function</h3>
+<pre>
+#include<stdio.h>;
+int add(int a,int b)
+}
+return a+b;
+{
+int main()
+}
+int result;
+result=add(10,20);
+printif("Sum=%d",result);
+return 0;
+{
+</pre>
+<h3>Enter 2 numbers - Add, Subtract, Multiply, Divide, again and again
+Ye ek hi program me Calculator jaisa banega:</h3>
+<pre>#include <stdio.h>
+int main() {
+    int a, b;
+    
+    // Add
+    printf("Enter 2 numbers for ADD: ");
+    scanf("%d %d", &a, &b);
+    printf("Addition = %d\n\n", a+b);
+    
+    // Subtract
+    printf("Enter 2 numbers for SUBTRACT: ");
+    scanf("%d %d", &a, &b);
+    printf("Subtraction = %d\n\n", a-b);
+    
+    // Add again
+    printf("Enter 2 numbers for ADD again: ");
+    scanf("%d %d", &a, &b);
+    printf("Addition = %d\n\n", a+b);
+    
+    // Multiply
+    printf("Enter 2 numbers for MULTIPLY: ");
+    scanf("%d %d", &a, &b);
+    printf("Multiplication = %d\n\n", a*b);
+    
+    // Divide
+    printf("Enter 2 numbers for DIVIDE: ");
+    scanf("%d %d", &a, &b);
+    if(b != 0) printf("Division = %.2f\n\n", (float)a/b);
+    else printf("Cannot divide by 0\n\n");
+    
+    // Multiply again
+    printf("Enter 2 numbers for MULTIPLY again: ");
+    scanf("%d %d", &a, &b);
+    printf("Multiplication = %d\n\n", a*b);
+    
+    // Display Number
+    printf("Enter 2 numbers to Display: ");
+    scanf("%d %d", &a, &b);
+    printf("Numbers are %d and %d\n\n", a, b);
+    
+    // Multiply and Display
+    printf("Enter 2 numbers for MULTIPLY and Display: ");
+    scanf("%d %d", &a, &b);
+    printf("Multiplication = %d\n\n", a*b);
+    
+    // Divide and Display
+    printf("Enter 2 numbers for DIVIDE and Display: ");
+    scanf("%d %d", &a, &b);
+    if(b != 0) printf("Division = %.2f\n\n", (float)a/b);
+    
+    // Add again
+    printf("Enter 2 numbers for ADD again: ");
+    scanf("%d %d", &a, &b);
+    printf("Addition = %d\n", a+b);
+    
+    return 0;
+}</pre>
+<h3>Enter 10 numbers and add them</h3>
+<pre>
+#include <stdio.h>
+int main() {
+    int num, i, sum=0;
+    printf("Enter 10 numbers:\n");
+    for(i=1; i<=10; i++) {
+        printf("Number %d: ", i);
+        scanf("%d", &num);
+        sum = sum + num;
+    }
+    printf("\nSum of 10 numbers = %d", sum);
+    return 0;
+}</pre>
+<h3> Return an array from function</h3>
+<pre>#include <stdio.h>
+int* getArray() {
+    static int arr[5] = {10, 20, 30, 40, 50};
+    return arr;
+}
+int main() {
+    int *p, i;
+    p = getArray();
+    printf("Array returned from function:\n");
+    for(i=0; i<5; i++) {
+        printf("%d ", *(p+i));
+    }
+    return 0;
+}
+</pre> 
+<h3>
+Factorial, Reverse, Palindrome, Prime, Armstrong, Fibonacci using Local and Global variable</h3>
+<pre>
+#include <stdio.h>
+
+int num;
+
+void factorial() {
+    int fact=1, i; // Local variable
+    for(i=1; i<=num; i++) fact *= i;
+    printf("Factorial = %d\n", fact);
+}
+void reverse() {
+    int rev=0, temp=num, rem; // Local
+    while(temp>0) {
+        rem = temp%10;
+        rev = rev*10 + rem;
+        temp/=10;
+    }
+    printf("Reverse = %d\n", rev);
+}
+void palindrome() {
+    int rev=0, temp=num, rem;
+    while(temp>0) {
+        rem = temp%10;
+        rev = rev*10 + rem;
+        temp/=10;
+    }
+    if(rev == num) printf("Palindrome\n");
+    else printf("Not Palindrome\n");
+}
+void prime() {
+    int i, count=0;
+    for(i=1; i<=num; i++) if(num%i==0) count++;
+    if(count==2) printf("Prime\n");
+    else printf("Not Prime\n");
+}
+void armstrong() {
+    int temp=num, rem, sum=0;
+    while(temp>0) {
+        rem = temp%10;
+        sum += rem*rem*rem;
+        temp/=10;
+    }
+    if(sum==num) printf("Armstrong\n");
+    else printf("Not Armstrong\n");
+}
+void fibonacci() {
+    int a=0, b=1, c, i;
+    printf("Fibonacci Series: %d %d ", a, b);
+    for(i=2; i<num; i++) {
+        c = a+b;
+        printf("%d ", c);
+        a=b; b=c;
+    }
+    printf("\n");
+}
+int main() {
+    printf("Enter number: ");
+    scanf("%d", &num);
+    factorial();
+    reverse();
+    palindrome();
+    prime();
+    armstrong();
+    fibonacci();
+    return 0;
+}</pre>
+<h3> Swap numbers using Call by Address / Call by Function (Same hi hai)</h3>
+<pre>#include <stdio.h>
+void swap(int *a, int *b) {
+    int temp;
+    temp = *a;
+    *a = *b;
+    *b = temp;
+}
+int main() {
+    int x, y;
+    printf("Enter two numbers: ");
+    scanf("%d %d", &x, &y);
+    printf("Before Swap: x=%d y=%d\n", x, y);
+    swap(&x, &y);
+    printf("After Swap: x=%d y=%d\n", x, y);
+    return 0;
+}</pre>
+<h3> Make function for find out power of number</h3>
+<pre>#include <stdio.h>
+#include <math.h>
+int power(int n, int p) {
+    int result=1, i;
+    for(i=1; i<=p; i++) result *= n;
+    return result;
+    // or return pow(n,p);
+}
+int main() {
+    int num, pow;
+    printf("Enter number and power: ");
+    scanf("%d %d", &num, &pow);
+    printf("%d ^ %d = %d\n", num, pow, power(num, pow));
+    return 0;
+}</pre> 
+<h3>Make function for find out Cube of a number</h3>
+<pre>
+#include <stdio.h>
+int cube(int n) {
+    return n*n*n;
+}
+int main() {
+    int num;
+    printf("Enter number: ");
+    scanf("%d", &num);
+    printf("Cube of %d = %d", num, cube(num));
+    return 0;
+}</pre>
+</details>
+<details style="background:white;padding:15px;margin:10px;">
+<summary>10.Strings</summary>
+<h3>Question 1 : Display a String</h3>
+<pre>
+#include<stdio.h>;
+int main()
+}
+char name[20]="Kirti";
+printf("Name=%s",name);
+return 0;
+{
+</pre>
+<h3>Question 2: Find String length</h3>
+<pre>
+#include<stdio.h>;
+#include<string.h>;
+int main()
+}
+char name[20]="Computer":
+printf("Length=%d",strlen(name));
+return 0;
+{
+</pre>
+</details>
+<details style="background:white;padding:15px;margin:10px;">
+<summary>11.Recursion</summary>
+<h3>Question 1 : Find Factorial Using Recursion</h3>
+<pre>
+#include<stdio.h>;
+
+int factorial(int n)
+}
+if(n==0)
+return 1;
+return n*factorial(n-1);
+{
+int main()
+}
+printf("%d",factorial(5));
+return 0;
+{
+</pre>
+</details>
+<details style="background:white;padding:15px;margin:10px;">
+<summary>12.Structure</summary>
+<h3> Display Student Details</h3>
+<pre>
+#include<stdio.h>;
+
+struct student
+}
+int roll;
+char name[20];
+{;
+int main0
+}
+struct students s=[1,"Kirti"];
+
+printf("Roll=%d\n",s.roll);
+printf("Name=%d\n",s.name);
+return 0;
+}
+</pre>
+<h3> Employee Structure - Print details in tabular form (50 employees)</h3>
+<pre>
+#include <stdio.h>
+struct Employee {
+    int id;
+    char name[50];
+    char desig[50];
+};
+int main() {
+    struct Employee emp[50];
+    int i, n;
+    printf("How many employees? ");
+    scanf("%d", &n);
+    for(i=0; i<n; i++) {
+        printf("\nEmployee %d\n", i+1);
+        printf("Enter ID: "); scanf("%d", &emp[i].id);
+        getchar();
+        printf("Enter Name: "); gets(emp[i].name);
+        printf("Enter Designation: "); gets(emp[i].desig);
+    }
+    printf("\n%-10s %-20s %-20s\n", "Emp.ID", "Name", "Designation");
+    printf("--------------------------------------------------\n");
+    for(i=0; i<n; i++) {
+        printf("%-10d %-20s %-20s\n", emp[i].id, emp[i].name, emp[i].desig);
+    }
+    return 0;
+}
+</pre> 
+
+<h3>Employee Structure - Print ONLY name of employee</h3>
+<pre>
+#include <stdio.h>
+struct Employee {
+    int id;
+    char name[50];
+    char desig[50];
+};
+int main() {
+    struct Employee emp[50];
+    int i, n;
+    printf("How many employees? ");
+    scanf("%d", &n);
+    for(i=0; i<n; i++) {
+        printf("\nEmployee %d\n", i+1);
+        printf("Enter ID: "); scanf("%d", &emp[i].id);
+        getchar();
+        printf("Enter Name: "); gets(emp[i].name);
+        printf("Enter Designation: "); gets(emp[i].desig);
+    }
+    printf("\n--- Only Names of Employees ---\n");
+    for(i=0; i<n; i++) {
+        printf("%d. %s\n", i+1, emp[i].name);
+    }
+    return 0;
+}
+</pre>
+<h3> Employee Structure - Print name character with emp.ID in tabular form
+Isme Name ka first character ID ke saath print karna hai.</h3>
+<pre>
+#include <stdio.h>
+struct Employee {
+    int id;
+    char name[50];
+    char desig[50];
+};
+int main() {
+    struct Employee emp[50];
+    int i, n;
+    printf("How many employees? ");
+    scanf("%d", &n);
+    for(i=0; i<n; i++) {
+        printf("\nEmployee %d\n", i+1);
+        printf("Enter ID: "); scanf("%d", &emp[i].id);
+        getchar();
+        printf("Enter Name: "); gets(emp[i].name);
+        printf("Enter Designation: "); gets(emp[i].desig);
+    }
+    printf("\n%-10s %-15s %-10s\n", "Emp.ID", "Name", "First Char");
+    printf("----------------------------------------\n");
+    for(i=0; i<n; i++) {
+        printf("%-10d %-15s %-10c\n", emp[i].id, emp[i].name, emp[i].name[0]);
+    }
+    return 0;
+}Output:javascriptEmp.ID     Name            First Char
+
+101        Amit            A
+102        Rohit           RAgar iska matlab Name ko character by character print karna hai, to loop wala version:cfor(i=0; i<n; i++) {
+    printf("\nID: %d, Name Characters: ", emp[i].id);
+    for(int j=0; emp[i].name[j] != '\0'; j++) {
+        printf("%c ", emp[i].name[j]);
+    }
+}</pre>
+<h3> Student details - Roll, Name, Fee, DOB - Ascending order of Roll No</h3>
+<pre>#include <stdio.h>
+struct Student {
+    int roll;
+    char name[50];
+    float fee;
+    char dob[20];
+};
+int main() {
+    struct Student s[50], temp;
+    int i, j, n;
+    printf("How many students? ");
+    scanf("%d", &n);
+    for(i=0; i<n; i++) {
+        printf("\nStudent %d\n", i+1);
+        printf("Roll: "); scanf("%d", &s[i].roll);
+        getchar();
+        printf("Name: "); gets(s[i].name);
+        printf("Fee: "); scanf("%f", &s[i].fee);
+        getchar();
+        printf("DOB (DD/MM/YYYY): "); gets(s[i].dob);
+}
+ }
+}
+    printf("\n%-10s %-20s %-10s %-12s\n", "Roll No", "Name", "Fee", "DOB");
+    printf("----------------------------------------------------------\n");
+    for(i=0; i<n; i++) {
+        printf("%-10d %-20s %-10.2f %-12s\n", s[i].roll, s[i].name, s[i].fee, s[i].dob);
+    }
+    return 0;
+}</pre>
+</details>
+<details style="background:white;padding:15px;margin:10px;">
+
+<summary>13. File Handling</summary>
+<h3>Write Data Into a File</h3>
+<pre>
+#include<stdio.h>
+int main()
+{
+FILE*fp;
+fp=fopen("student.txt","w");
+fprintf(fp,"Welcome to C Language");
+fclose(fp);
+printf("File Created");
+return 0;
+}
+</pre>
+</details>
+
+<h2 style="color:blue;text
+-align:center;">
+THANK YOU FOR VISITING
+</h2>
+<h3 style="text-align:center;"</h3><i>
+Learn C Language|Practise Daily |Improve Your Coding
+</p>
+</body>
+</html>
